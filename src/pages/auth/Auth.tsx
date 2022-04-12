@@ -33,7 +33,7 @@ const Auth: FC = () => {
     if (formData.username.trim() === '' || formData.email.trim() === '') {
       onOpen();
     } else {
-      localStorage.setItem('username', formData.username.split(' ')[0].toString());
+      localStorage.setItem('username', formData.username);
       navigate('/selection');
     }
   };
