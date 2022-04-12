@@ -1,8 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { useDispatch, TypedUseSelectorHook, useSelector } from 'react-redux';
+import packagesListSlice from '../features/packagesListSlice';
 
 const store = configureStore({
-  reducer: {},
+  reducer: {
+    packagesList: packagesListSlice,
+  },
 });
 
 export default store;
