@@ -1,7 +1,8 @@
+import { Box } from '@chakra-ui/react';
 import React, { FC } from 'react';
 
 const PaymentApp: FC = () => {
-  return <div>PaymentApp</div>;
+  return <Box height="100vh">PaymentApp</Box>;
 };
 
 export default PaymentApp;
