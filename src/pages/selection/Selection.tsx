@@ -1,7 +1,8 @@
 import React from 'react';
+import Header from '../../components/Header';
 
 function Selection() {
-  return <div>Selection</div>;
+  return <Header />;
 }
 
 export default Selection;
