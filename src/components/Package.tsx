@@ -1,5 +1,5 @@
 import { Box, Divider, Image, Tag, TagLabel, TagLeftIcon, Text } from '@chakra-ui/react';
-import { FC, useState } from 'react';
+import { FC } from 'react';
 import { BiWifi0 } from 'react-icons/bi';
 import { add, remove } from '../features/customerBasketSlice';
 import { useAppDispatch, useAppSelector } from '../store';
@@ -10,39 +10,46 @@ interface PackageProps {
 }
 
 const Package: FC<PackageProps> = ({ packageFL }) => {
-  const [borderGreen, setBorderGreen] = useState(false);
   const dispatch = useAppDispatch();
   const customerBasket = useAppSelector((state) => state.customerBasket);
 
   const addPackage = () => {
     dispatch(add(packageFL));
-    setBorderGreen(!borderGreen);
   };
 
   const removePackage = () => {
     dispatch(remove(packageFL));
-    setBorderGreen(!borderGreen);
+  };
+
+  let isSelected = false;
+
+  const packageBorderColor = () => {
+    if (
+      customerBasket.some((item) => {
+        return item.id === packageFL.id;
+      })
+    ) {
+      isSelected = true;
+    }
+    return isSelected;
   };
 
   return (
     <Box
       width="450px"
       onClick={() => {
-        if (!borderGreen) {
+        if (!isSelected) {
           addPackage();
-          console.log(customerBasket);
         } else {
           removePackage();
-          console.log(customerBasket);
         }
-        setBorderGreen(!borderGreen);
       }}
       _hover={{ cursor: 'pointer' }}
       display="flex"
       flexDirection="row"
       border="2px"
       borderRadius="lg"
-      borderColor={borderGreen ? 'green.300' : 'none'}
+      borderColor={packageBorderColor() === true ? 'green.300' : 'none'}
       bg="blackAlpha.200"
     >
       <Box sx={{ flexGrow: '1' }} width="150px">
