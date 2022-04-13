@@ -1,4 +1,4 @@
-import { Box, Icon, Text } from '@chakra-ui/react';
+import { Box, Icon, Text, Image } from '@chakra-ui/react';
 import React, { FC } from 'react';
 import { BiUser } from 'react-icons/bi';
 import logo from '../assets/ecozum-logo.png';
@@ -21,7 +21,7 @@ const Header: FC = () => {
       boxShadow="md"
     >
       <Box>
-        <img className="delete" src={logo} alt="deletePic" />
+        <Image src={logo} alt="logo" />
       </Box>
       <Box display="flex" flexDirection="row" gap="2">
         <Icon rounded="full" boxSize="6" bg="gray.400" as={BiUser} />
