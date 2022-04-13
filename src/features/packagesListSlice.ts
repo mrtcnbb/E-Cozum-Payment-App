@@ -20,7 +20,7 @@ export const fetchPackages = createAsyncThunk('fetchPackages', async () => {
 });
 
 const packagesListSlice = createSlice({
-  name: 'boardsList',
+  name: 'packagesList',
   initialState,
   reducers: {
     resetState: (state) => {
@@ -42,7 +42,7 @@ const packagesListSlice = createSlice({
     });
     builder.addCase(fetchPackages.rejected, (state, action) => {
       state.loading = false;
-      state.error = "Couldn't fetch boards";
+      state.error = 'Paketleri çağıramadık';
       state.data = null;
     });
   },
