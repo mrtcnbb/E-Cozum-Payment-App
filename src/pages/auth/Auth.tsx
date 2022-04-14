@@ -39,7 +39,7 @@ const Auth: FC = () => {
   };
 
   return (
-    <Box height="100vh" display="flex" alignItems="center">
+    <Box height="100vh" display="flex" alignItems="center" bg="gray.200">
       <Box
         mx="auto"
         width={'md'}
