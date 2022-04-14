@@ -28,15 +28,16 @@ const Payment: FC = () => {
   };
 
   return (
-    <Box display="flex" flexDirection="column" height="100vh" overflowX="auto" bg="gray.200">
+    <Box display="flex" flexDirection="column" height="100vh" minWidth="1535px" overflowX="auto" bg="gray.200">
       <Header />
-      <Box display="flex" flexDirection="row" gap="20px" mx="200px" mt="50px">
-        <Box flex="2" display="flex" flexDirection="column" rounded="lg" bg="white" p="10" gap="30px">
+      <Box display="flex" flexDirection="row" gap="20px" mx="auto" px="100px" mt="50px" boxSizing="border-box">
+        <Box width="905px" display="flex" flexDirection="column" rounded="lg" bg="white" p="10" gap="30px">
           <Box>
             <Text>Kart Bilgileri</Text>
             <Box
               display="flex"
               flexDirection="column"
+              gap="20px"
               rounded="lg"
               border="1px"
               borderColor="gray.300"
@@ -107,7 +108,7 @@ const Payment: FC = () => {
             </Box>
           </Box>
         </Box>
-        <Box flex="1">
+        <Box width="400px">
           <Basket cardHolderName={customerName} cardNumber={cardNumber} cvv={securityNumber} expireDate={expireDate} />
         </Box>
       </Box>
