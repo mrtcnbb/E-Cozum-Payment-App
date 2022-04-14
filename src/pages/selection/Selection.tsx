@@ -11,7 +11,7 @@ function Selection() {
 
   useEffect(() => {
     dispatch(fetchPackages());
-  }, []);
+  }, [dispatch]);
 
   return (
     <Box display="flex" flexDirection="column" height="100vh" minWidth="980px" overflowX="auto" bg="gray.200">
