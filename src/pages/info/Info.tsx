@@ -5,7 +5,7 @@ import { BiCheckCircle } from 'react-icons/bi';
 
 const Info: FC = () => {
   return (
-    <Box display="flex" flexDirection="column" height="100vh" bg="gray.200">
+    <Box display="flex" flexDirection="column" height="100vh" minWidth="500px" bg="gray.200">
       <Header />
       <Box
         display="flex"
